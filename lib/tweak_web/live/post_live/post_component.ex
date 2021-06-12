@@ -6,6 +6,11 @@ defmodule TweakWeb.PostLive.PostComponent do
     <tr id="post-<%= @post.id %>">
     <td><%= @post.username %></td>
     <td><%= @post.body %></td>
+    <div>
+    <%= for url <- @post.photo_urls do%>
+    <img src="<%= url %>" height="150" />
+    <% end %>
+    </div>
     <td>
      <a href="#" phx-click="like" phx-target="<%= @myself %>">
       <%= @post.likes %>

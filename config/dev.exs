@@ -58,7 +58,8 @@ config :tweak, TweakWeb.Endpoint,
 config :tweak, TweakWeb.Endpoint,
   live_reload: [
     patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      # to prevent reloading while uploading
+      ~r"priv/static/[^uploads].*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/tweak_web/(live|views)/.*(ex)$",
       ~r"lib/tweak_web/templates/.*(eex)$"

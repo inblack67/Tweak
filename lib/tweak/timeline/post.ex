@@ -7,6 +7,7 @@ defmodule Tweak.Timeline.Post do
     field(:likes, :integer, default: 0)
     field(:reposts, :integer, default: 0)
     field(:username, :string, default: "inblack67")
+    field(:photo_urls, {:array, :string}, default: [])
 
     timestamps()
   end
